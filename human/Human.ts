@@ -79,9 +79,7 @@ class Birthday {
   get age() {
     const today = new Date();
     const diff = today.getTime() - this.value.getTime();
-    const age = new Date(diff).getFullYear() - 1970;
-
-    return age;
+    return new Date(diff).getFullYear() - 1970;
   }
 
   equals(other: Birthday): boolean {
