@@ -47,12 +47,14 @@ class HumanId {
   }
 }
 
+type BloodTypeName = "a" | "b" | "o" | "ab";
+
 class BloodType {
   type = "BloodType" as const;
 
-  static bloodTypes = ["a", "b", "o", "ab"];
+  static bloodTypes: BloodTypeName[] = ["a", "b", "o", "ab"];
 
-  constructor(readonly value: string) {
+  constructor(readonly value: BloodTypeName) {
     const isValid = BloodType.bloodTypes.includes(value);
 
     if (!isValid) {
